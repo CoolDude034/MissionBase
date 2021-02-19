@@ -65,6 +65,7 @@ namespace MissionBase
             if (missionActive == true)
             {
                 CopsAlerted();
+                PlayerDied();
                 switch (missionIndex)
                 {
                     case 0: // the beginning
@@ -161,6 +162,7 @@ namespace MissionBase
         {
             missionIndex = -1; // reset mission
             missionActive = false;
+            showncopmessage = false;
             // cleanup...
             if (policecaptain.Exists())
             {
@@ -185,6 +187,14 @@ namespace MissionBase
             {
                 showncopmessage = true;
                 UI.ShowHelpMessage("You have been ~r~compromised~s~");
+            }
+        }
+
+        void PlayerDied()
+        {
+            if (Game.Player.Character.IsDead)
+            {
+                ResetMission();
             }
         }
     }
