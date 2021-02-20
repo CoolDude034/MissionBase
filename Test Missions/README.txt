@@ -1,4 +1,4 @@
-New missions will be added in the future, alongside their source code for educational purposes.
+New missions will be added in the future
 Drop the scripts into your main scripts folder
 
 
